@@ -13,7 +13,7 @@ module Oktakit
       # @example
       #   Oktakit.add_group
       def add_group(options = {})
-        post('/groups', options)
+        post("/groups", options)
       end
 
       # Get Group
@@ -44,7 +44,7 @@ module Oktakit
       # @example
       #   Oktakit.list_groups
       def list_groups(options = {})
-        get('/groups', options)
+        get("/groups", options)
       end
 
       # Update Group

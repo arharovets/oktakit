@@ -13,7 +13,7 @@ module Oktakit
       # @example
       #   Oktakit.add_identity_provider
       def add_identity_provider(options = {})
-        post('/idps', options)
+        post("/idps", options)
       end
 
       # Get Identity Provider
@@ -44,7 +44,7 @@ module Oktakit
       # @example
       #   Oktakit.list_identity_providers
       def list_identity_providers(options = {})
-        get('/idps', options)
+        get("/idps", options)
       end
 
       # Update Identity Provider
@@ -220,7 +220,7 @@ module Oktakit
       # @example
       #   Oktakit.add_x509_certificate_public_key
       def add_x509_certificate_public_key(options = {})
-        post('/idps/credentials/keys', options)
+        post("/idps/credentials/keys", options)
       end
 
       # Get Key
@@ -251,7 +251,7 @@ module Oktakit
       # @example
       #   Oktakit.list_keys
       def list_keys(options = {})
-        get('/idps/credentials/keys', options)
+        get("/idps/credentials/keys", options)
       end
 
       # Delete Key

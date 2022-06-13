@@ -13,7 +13,7 @@ module Oktakit
       # @example
       #   Oktakit.create_user
       def create_user(options = {})
-        post('/users', options)
+        post("/users", options)
       end
 
       # Get User
@@ -44,7 +44,7 @@ module Oktakit
       # @example
       #   Oktakit.list_users
       def list_users(options = {})
-        get('/users', options)
+        get("/users", options)
       end
 
       # Update User

@@ -1,19 +1,19 @@
-require 'bundler/gem_tasks'
+require "bundler/gem_tasks"
 
-require 'rspec/core/rake_task'
+require "rspec/core/rake_task"
 RSpec::Core::RakeTask.new(:spec)
 
-require 'rubocop/rake_task'
+require "rubocop/rake_task"
 RuboCop::RakeTask.new
 
 task test: :spec
-task default: %i[spec rubocop]
+task default: [:spec, :rubocop]
 
 namespace :doc do
-  require 'yard'
+  require "yard"
   YARD::Rake::YardocTask.new do |task|
-    task.files = %w[LICENSE.md lib/**/*.rb]
-    task.options = %w[--output-dir doc/yard --markup markdown]
+    task.files = ["LICENSE.md", "lib/**/*.rb"]
+    task.options = ["--output-dir", "doc/yard", "--markup", "markdown"]
   end
   task default: :yard
 end

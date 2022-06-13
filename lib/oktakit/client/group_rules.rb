@@ -13,7 +13,7 @@ module Oktakit
       # @example
       #   Oktakit.add_group_rule
       def add_group_rule(options = {})
-        post('/groups/rules', options)
+        post("/groups/rules", options)
       end
 
       # Get Group Rule
@@ -44,7 +44,7 @@ module Oktakit
       # @example
       #   Oktakit.list_group_rules
       def list_group_rules(options = {})
-        get('/groups/rules', options)
+        get("/groups/rules", options)
       end
 
       # Update Group Rule

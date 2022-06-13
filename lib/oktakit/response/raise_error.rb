@@ -1,5 +1,5 @@
-require 'faraday'
-require 'oktakit/error'
+require "faraday"
+require "oktakit/error"
 
 module Oktakit
   # Faraday response middleware
@@ -9,8 +9,8 @@ module Oktakit
     class RaiseError < Faraday::Response::Middleware
       private
 
-      def on_complete(response)
-        if (error = Oktakit::Error.from_response(response))
+      def on_complete(response, status)
+        if (error = Oktakit::Error.from_response(response, status))
           raise error
         end
       end

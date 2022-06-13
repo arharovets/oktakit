@@ -1,15 +1,15 @@
-require 'sawyer'
-require 'oktakit/response/raise_error'
-require 'oktakit/client/admin_roles'
-require 'oktakit/client/apps'
-require 'oktakit/client/events'
-require 'oktakit/client/factors'
-require 'oktakit/client/groups'
-require 'oktakit/client/group_rules'
-require 'oktakit/client/identity_providers'
-require 'oktakit/client/schemas'
-require 'oktakit/client/templates'
-require 'oktakit/client/users'
+require "sawyer"
+require "oktakit/response/raise_error"
+require "oktakit/client/admin_roles"
+require "oktakit/client/apps"
+require "oktakit/client/events"
+require "oktakit/client/factors"
+require "oktakit/client/groups"
+require "oktakit/client/group_rules"
+require "oktakit/client/identity_providers"
+require "oktakit/client/schemas"
+require "oktakit/client/templates"
+require "oktakit/client/users"
 
 module Oktakit
   class Client
@@ -186,10 +186,10 @@ module Oktakit
 
     def sawyer_agent
       @sawyer_agent ||= Sawyer::Agent.new(api_endpoint, sawyer_options) do |http|
-        http.headers[:accept] = 'application/json'
-        http.headers[:content_type] = 'application/json'
+        http.headers[:accept] = "application/json"
+        http.headers[:content_type] = "application/json"
         http.headers[:user_agent] = "Oktakit v#{Oktakit::VERSION}"
-        http.authorization('SSWS ', @token) if @token
+        http.authorization("SSWS ", @token) if @token
         http.authorization(:Bearer, @access_token) if @access_token
       end
     end
@@ -204,7 +204,7 @@ module Oktakit
     def absolute_to_relative_url(next_ref)
       return unless next_ref
 
-      next_ref.href.sub(api_endpoint, '')
+      next_ref.href.sub(api_endpoint, "")
     end
   end
 end

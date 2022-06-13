@@ -1,20 +1,20 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe Oktakit::Client::Schemas do
-  let(:app_id) { 'okta-test-application' }
+  let(:app_id) { "okta-test-application" }
 
-  describe '#get_user_schema' do
-    it 'returns user schema' do
-      VCR.use_cassette('get_user_schema') do
+  describe "#get_user_schema" do
+    it "returns user schema" do
+      VCR.use_cassette("get_user_schema") do
         resp, = client.get_user_schema
         expect(resp.id).not_to(be_nil)
       end
     end
   end
 
-  describe '#add_property_to_user_profile_schema' do
-    it 'returns user schema' do
-      VCR.use_cassette('add_property_to_user_profile_schema') do
+  describe "#add_property_to_user_profile_schema" do
+    it "returns user schema" do
+      VCR.use_cassette("add_property_to_user_profile_schema") do
         resp, status = client.add_property_to_user_profile_schema(
           definitions: {
             custom: {
@@ -46,9 +46,9 @@ describe Oktakit::Client::Schemas do
     end
   end
 
-  describe '#update_user_profile_schema_property' do
-    it 'returns user schema' do
-      VCR.use_cassette('update_user_profile_schema_property') do
+  describe "#update_user_profile_schema_property" do
+    it "returns user schema" do
+      VCR.use_cassette("update_user_profile_schema_property") do
         resp, status = client.update_user_profile_schema_property(
           definitions: {
             custom: {
@@ -80,9 +80,9 @@ describe Oktakit::Client::Schemas do
     end
   end
 
-  describe '#remove_property_from_user_profile_schema' do
-    it 'returns user schema' do
-      VCR.use_cassette('remove_property_from_user_profile_schema') do
+  describe "#remove_property_from_user_profile_schema" do
+    it "returns user schema" do
+      VCR.use_cassette("remove_property_from_user_profile_schema") do
         _, status = client.remove_property_from_user_profile_schema(
           definitions: {
             custom: {
@@ -97,18 +97,18 @@ describe Oktakit::Client::Schemas do
     end
   end
 
-  describe '#get_app_user_schema' do
-    it 'returns user schema' do
-      VCR.use_cassette('get_app_user_schema') do
+  describe "#get_app_user_schema" do
+    it "returns user schema" do
+      VCR.use_cassette("get_app_user_schema") do
         resp, = client.get_app_user_schema(app_id)
         expect(resp.id).not_to(be_nil)
       end
     end
   end
 
-  describe '#add_property_to_app_user_profile_schema' do
-    it 'returns user schema' do
-      VCR.use_cassette('add_property_to_app_user_profile_schema') do
+  describe "#add_property_to_app_user_profile_schema" do
+    it "returns user schema" do
+      VCR.use_cassette("add_property_to_app_user_profile_schema") do
         resp, status = client.add_property_to_app_user_profile_schema(
           app_id,
           definitions: {
@@ -141,9 +141,9 @@ describe Oktakit::Client::Schemas do
     end
   end
 
-  describe '#update_app_user_profile_schema_property' do
-    it 'returns user schema' do
-      VCR.use_cassette('update_app_user_profile_schema_property') do
+  describe "#update_app_user_profile_schema_property" do
+    it "returns user schema" do
+      VCR.use_cassette("update_app_user_profile_schema_property") do
         resp, status = client.update_app_user_profile_schema_property(
           app_id,
           definitions: {
@@ -176,9 +176,9 @@ describe Oktakit::Client::Schemas do
     end
   end
 
-  describe '#remove_property_from_app_user_profile_schema' do
-    it 'returns user schema' do
-      VCR.use_cassette('remove_property_from_app_user_profile_schema') do
+  describe "#remove_property_from_app_user_profile_schema" do
+    it "returns user schema" do
+      VCR.use_cassette("remove_property_from_app_user_profile_schema") do
         _, status = client.remove_property_from_app_user_profile_schema(
           app_id,
           definitions: {

@@ -13,7 +13,7 @@ module Oktakit
       # @example
       #   Oktakit.add_application
       def add_application(options = {})
-        post('/apps', options)
+        post("/apps", options)
       end
 
       # Get Application
@@ -44,7 +44,7 @@ module Oktakit
       # @example
       #   Oktakit.list_applications
       def list_applications(options = {})
-        get('/apps', options)
+        get("/apps", options)
       end
 
       # Update Application

@@ -13,7 +13,7 @@ module Oktakit
       # @example
       #   Oktakit.add_sms_template
       def add_sms_template(options = {})
-        post('/templates/sms', options)
+        post("/templates/sms", options)
       end
 
       # Get SMS Template
@@ -44,7 +44,7 @@ module Oktakit
       # @example
       #   Oktakit.list_sms_templates
       def list_sms_templates(options = {})
-        get('/templates/sms', options)
+        get("/templates/sms", options)
       end
 
       # Update Sms Template
